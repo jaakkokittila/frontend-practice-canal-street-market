@@ -9,18 +9,18 @@
   [:div.footer
    [:div.footer-top
     [:p.footer-text "Interested in becoming a vendor?"]
-    [:p.footer-button "click here"]]
-   [:div.contact-section
-    [:div.contact-box.dashed-border "Email us"]
-    [:div.contact-box.dashed-border "Follow us on Facebook"]
-    [:div.contact-box.dashed-border "Follow us on Instagram"]]
-   [:div.news-letter.dashed-border
-    [:p.news-letter-text "Stay up to date with our newsletter"]
+    [:p.footer-button.amatic.margin-center.pointer "click here"]]
+   [:div.contact-section.flex-row
+    [:div.contact-box.dashed-border.amatic.pointer "Email us"]
+    [:div.contact-box.dashed-border.amatic.pointer "Follow us on Facebook"]
+    [:div.contact-box.dashed-border.amatic.pointer "Follow us on Instagram"]]
+   [:div.news-letter.dashed-border.margin-center.flex-row
+    [:p.news-letter-text.amatic "Stay up to date with our newsletter"]
     [:input.email {:type "text" 
                    :value email 
                    :placeholder "Email"
                    :on-change #(re/dispatch [::events/set-email (-> % .-target .-value)])}]]
-   [:p.footer-bottom "Jaakko Kittilä - Made for practice purposes"]]))
+   [:p.footer-bottom.amatic "Jaakko Kittilä - Made for practice purposes"]]))
 
 (defn top-part [title image-text text-section img-path]
   [:div.active-section-top
@@ -32,12 +32,12 @@
 
 
 (defn animated-section [title text]
-  [:div.animated-section
-   [:div.logo.logo-large.logo-left "CM"]
+  [:div.animated-section.flex-row
+   [:div.text-center.logo-large.logo-left.amatic "CM"]
    [:div.animated-section-content
-    [:p.animated-title title]
-    [:p.animated-text text]]
-   [:div.logo.logo-large.logo-right "CM"]])
+    [:p.animated-title.margin-center title]
+    [:p.animated-text.amatic.margin-center text]]
+   [:div.text-center.logo-large.logo-right.amatic "CM"]])
 
 (defn community []
   (let [active-section @(re/subscribe [::subs/active-section])]
@@ -53,9 +53,9 @@
         nil]
        [animated-section "Market Radio" "Podcasted from the market"]
        [footer]]
-      [:div.community.inactive-section {:on-click #(re/dispatch [::events/set-active-section "community"])}
+      [:div.community.inactive-section.pointer {:on-click #(re/dispatch [::events/set-active-section "community"])}
        [:p.inactive-section-text-1 "文化"]
-       [:p.inactive-section-text-2 "Community"]])))
+       [:p.inactive-section-text-2.amatic "Community"]])))
 
 
 (defn retail []
@@ -72,9 +72,9 @@
         "retail-section.jpg"]
        [animated-section "The Best of NYC" "All under one roof"]
        [footer]]
-      [:div.retail.inactive-section {:on-click #(re/dispatch [::events/set-active-section "retail"])}
+      [:div.retail.inactive-section.pointer {:on-click #(re/dispatch [::events/set-active-section "retail"])}
        [:p.inactive-section-text-1 "購物"]
-       [:p.inactive-section-text-2 "Retail"]])))
+       [:p.inactive-section-text-2.amatic "Retail"]])))
 
 (defn food []
   (let [active-section @(re/subscribe [::subs/active-section])]
@@ -90,26 +90,26 @@
         "food-section.jpg"]
        [animated-section "Happy Hour" "Every Weekday, 5 - 7PM $4 Beer & $7 Wine Come Hang With Us! **** Tappy Tuesday Pay with Apple Pay and receive 20% off *Beer and Wine excluded*"]
        [footer]]
-      [:div.food.inactive-section {:on-click #(re/dispatch [::events/set-active-section "food"])}
+      [:div.food.inactive-section.pointer {:on-click #(re/dispatch [::events/set-active-section "food"])}
        [:p.inactive-section-text-1 "餐饮"]
-       [:p.inactive-section-text-2 "Food"]])))
+       [:p.inactive-section-text-2.amatic "Food"]])))
 
 (defn home []
   (let [active-section @(re/subscribe [::subs/active-section])]
     (if (= active-section "home")
       [:div.home.active-section
-       [:div.logo
-        [:p.logo-text-active "CM"]]
+       [:div.text-center.pointer
+        [:p.logo-text-active.amatic "CM"]]
        [:p.home-section-title "Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street."]
        [:img.home-img {:src "home-section.jpg"}]
        [animated-section "Market Events" ""]
        [footer]]
-      [:div.home.inactive-section {:on-click #(re/dispatch [::events/set-active-section "home"])}
-       [:div.logo
-        [:p.logo-text "CM"]]])))
+      [:div.home.inactive-section.pointer {:on-click #(re/dispatch [::events/set-active-section "home"])}
+       [:div.text-center.pointer
+        [:p.logo-text.amatic "CM"]]])))
 
 (defn main-panel []
-  [:div.container
+  [:div.container.flex-row
    [home]
    [food]
    [retail]

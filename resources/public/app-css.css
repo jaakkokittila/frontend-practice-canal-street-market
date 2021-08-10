@@ -2,16 +2,30 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+.amatic {
+    font-family: 'Amatic SC'
+}
+.margin-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.pointer {
+    cursor: pointer;
+}
+.text-center {
+    text-align: center;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
 .container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
 }
-
 .inactive-section, .active-section {
     height: 100%;
     transition: 0.5s;
@@ -24,11 +38,6 @@
     transform: rotate(90deg);
     font-size: 1.5em;
     font-weight: bold;
-    font-family: 'Amatic SC';
-}
-.logo {
-    text-align: center;
-    cursor: pointer;
 }
 .logo-text, .logo-text-active {
     font-size: 1.5em;
@@ -38,7 +47,6 @@
     line-height: 60px;
     margin-left: 5px;
     border: 1px solid black;
-    font-family: 'Amatic SC';
     transition: 0.5s;
 }
 .logo-text-active {
@@ -56,7 +64,7 @@
     height: 150px;
     line-height: 150px;
     border-radius: 50%;
-    font-family: 'Amatic SC';
+    pointer-events: none;
 }
 @keyframes logo-left {
     0% {
@@ -90,15 +98,10 @@
     font-size: 5em;
     width: 300px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 .animated-text {
     font-size: 1.5em;
-    font-family: 'Amatic SC';
     width: 250px;
-    margin-left: auto;
-    margin-right: auto;
 }
 .active-section {
     width: 85%;
@@ -157,11 +160,8 @@
 }
 .inactive-section {
     width: 70px;
-    cursor: pointer;
 }
 .contact-section {
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 60px;
     margin-top: 60px;
@@ -186,16 +186,11 @@
 }
 .news-letter {
     width: 86%;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 2em;
     padding: 0.6em;
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
 }
 .news-letter-text {
-    font-family: 'Amatic SC';
     font-size: 2em;
 }
 .email {
@@ -227,15 +222,11 @@
     font-size: 3em;
 }
 .footer-button {
-    font-family: 'Amatic SC';
     border: 1px solid black;
     line-height: 40px;
     height: 40px;
     width: 90px;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 25px;
-    cursor: pointer;
     transition: 0.3s;
 }
 .footer-button:hover {
@@ -245,7 +236,6 @@
 .footer-bottom {
     margin-top: 30px;
     margin-bottom: 20px;
-    font-family: 'Amatic SC';
     font-size: 1.5em;
 }
 .contact-box {
@@ -256,22 +246,18 @@
     text-align: center;
     height: 200px;
     font-size: 3em;
-    font-family: 'Amatic SC';
-    cursor: pointer;
 }
 @keyframes border-animation {
     0% {
-        background-position-x: 101%, 101%, 0, 0;
+        background-position-x: 100%, 100%, 0, 0;
     }
     100% {
-        background-position-x: 0, 0, 101%, 101%;
+        background-position-x: 0, 0, 100%, 100%;
     }
 }
 .animated-section {
     padding-top: 60px;
     padding-bottom: 60px;
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
     background-image: repeating-linear-gradient(-45deg ,#000,#000 1px,transparent 0,transparent 68px),
