@@ -1,0 +1,296 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.inactive-section, .active-section {
+    height: 100%;
+    transition: 0.5s;
+}
+.inactive-section-text-1 {
+    padding-top: 3em;
+    text-align: center;
+}
+.inactive-section-text-2 {
+    transform: rotate(90deg);
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Amatic SC';
+}
+.logo {
+    text-align: center;
+    cursor: pointer;
+}
+.logo-text, .logo-text-active {
+    font-size: 1.5em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    margin-left: 5px;
+    border: 1px solid black;
+    font-family: 'Amatic SC';
+    transition: 0.5s;
+}
+.logo-text-active {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+.logo-large {
+    font-size: 3em;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    font-family: 'Amatic SC';
+}
+@keyframes logo-left {
+    0% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(150px);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+@keyframes logo-right {
+    0% {
+        transform: translateY(150px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(150px);
+    }
+}
+.logo-left {
+    animation: logo-left 5s linear infinite;
+}
+.logo-right {
+    animation: logo-right 5s linear infinite;
+}
+.animated-title {
+    font-size: 5em;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.animated-text {
+    font-size: 1.5em;
+    font-family: 'Amatic SC';
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.active-section {
+    width: 85%;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.active-section::-webkit-scrollbar {
+    display: none;
+}
+.active-section-top-right {
+    position: relative;
+    top: -600px;
+    float: right;
+    width: 400px;
+}
+.active-section-top-right-text {
+    font-size: 3.5em;
+    position: absolute;
+    top: -1.8em;
+    width: 50%;
+    z-index: 1;
+}
+.active-section-img {
+    height: 500px;
+    position: absolute;
+    right: 2em;
+    z-index: 0;
+}
+.active-section-title {
+    padding-top: 1em;
+    font-size: 10em;
+    width: 30%;
+    padding-left: 30px;
+}
+.home-section-title {
+    padding-top: 100px;
+    padding-left: 0.5em;
+    width: 80%;
+    font-size: 5em;
+    font-weight: 100;
+    text-align: left;
+}
+.home-img {
+    margin-top: 100px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+.active-section-opening-hours {
+    position: absolute;
+    top: -8.5em;
+    right: 2em;
+    width: 80%;
+    text-align: right;
+    font-size: 1.2em;
+}
+.inactive-section {
+    width: 70px;
+    cursor: pointer;
+}
+.contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+@keyframes border-movement {
+    0% {
+        background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%;
+    }
+    100% {
+        background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+    }
+}
+.dashed-border {
+    background: linear-gradient(90deg, black 50%, transparent 50%), linear-gradient(90deg, black 50%, transparent 50%), linear-gradient(0deg, black 50%, transparent 50%), linear-gradient(0deg, black 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 25px 2px, 25px 2px, 2px 25px, 2px 25px;
+    background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%;
+    transition: 1s;
+}
+.dashed-border:hover {
+    animation: border-movement 5s linear;
+}
+.news-letter {
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.news-letter-text {
+    font-family: 'Amatic SC';
+    font-size: 2em;
+}
+.email {
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px solid black;
+    width: 60%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2em;
+}
+.footer {
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+}
+.footer-top {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 2px solid rgba(80, 80, 80, 0.5);
+    border-bottom: 2px solid rgba(80, 80, 80, 0.5);
+    animation: border-movement 60s linear infinite;
+    width: 100%;
+}
+.footer-text {
+    font-size: 3em;
+}
+.footer-button {
+    font-family: 'Amatic SC';
+    border: 1px solid black;
+    line-height: 40px;
+    height: 40px;
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer-button:hover {
+    background-color: #000;
+    color: white;
+}
+.footer-bottom {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Amatic SC';
+    font-size: 1.5em;
+}
+.contact-box {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    font-size: 3em;
+    font-family: 'Amatic SC';
+    cursor: pointer;
+}
+@keyframes border-animation {
+    0% {
+        background-position-x: 101%, 101%, 0, 0;
+    }
+    100% {
+        background-position-x: 0, 0, 101%, 101%;
+    }
+}
+.animated-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    background-image: repeating-linear-gradient(-45deg ,#000,#000 1px,transparent 0,transparent 68px),
+                      repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 68px),
+                      repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 71px),
+                      repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 70px);
+    background-position: 0 100%,0 100%,0 0,0 0;
+    background-position-x: 0px, 0px, 0, 0;
+    background-position-y: 100%, 100%, 0, 0;
+    background-size: 93px 50px, 93px 50px,100px 50px,100px 50px;
+    background-repeat: repeat-x;
+    animation: border-animation 30s linear infinite;
+}
+.food {
+    background-color: #5ea3ec;
+}
+.retail {
+    background-color: #f64444;
+}
+.community {
+    background-color: #ffb400;
+}
