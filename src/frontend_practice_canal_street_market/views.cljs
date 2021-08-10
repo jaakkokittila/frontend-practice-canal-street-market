@@ -22,6 +22,14 @@
                    :on-change #(re/dispatch [::events/set-email (-> % .-target .-value)])}]]
    [:p.footer-bottom "Jaakko Kittilä - Made for practice purposes"]]))
 
+(defn top-part [title image-text text-section img-path]
+  [:div.active-section-top
+   [:p.active-section-title title]
+   [:div.active-section-top-right
+     text-section
+    [:p.active-section-top-right-text image-text]
+    (when img-path [:img.active-section-img {:src img-path}])]])
+
 
 (defn animated-section [title text]
   [:div.animated-section
@@ -35,13 +43,14 @@
   (let [active-section @(re/subscribe [::subs/active-section])]
     (if (= active-section "community")
       [:div.community.active-section
-       [:p.active-section-title "Canal St. Community"]
-       [:div.active-section-top-right
+       [top-part
+       "Canal St. Community"
+       "文化"
         [:div.active-section-opening-hours
          [:p "Our mixed use space hosts"]
          [:p "ongoing events, podcasts"]
          [:p "& artists in residence"]]
-        [:p.active-section-top-right-text "文化"]]
+        nil]
        [animated-section "Market Radio" "Podcasted from the market"]
        [footer]]
       [:div.community.inactive-section {:on-click #(re/dispatch [::events/set-active-section "community"])}
@@ -51,16 +60,16 @@
 
 (defn retail []
   (let [active-section @(re/subscribe [::subs/active-section])]
-    (if (= active-section "retail")
+    (if (= active-section "retail")  
       [:div.retail.active-section
-       [:p.active-section-title "The Retail Market"]
-       [:div.active-section-top-right
-        [:div.active-section-opening-hours
-         [:p "Retail Market (AFRAME Coffee) Hours:"]
-         [:p "Mon – Fri: 8:00AM - 3:00PM"]
-         [:p "Sat & Sun: 9:00AM - 3:00PM"]]
-        [:p.active-section-top-right-text "購物"]
-        [:img.active-section-img {:src "retail-section.jpg"}]]
+       [top-part
+       "The Retail Market"
+       "購物"
+       [:div.active-section-opening-hours
+        [:p "Retail Market (AFRAME Coffee) Hours:"]
+        [:p "Mon – Fri: 8:00AM - 3:00PM"]
+        [:p "Sat & Sun: 9:00AM - 3:00PM"]]
+        "retail-section.jpg"]
        [animated-section "The Best of NYC" "All under one roof"]
        [footer]]
       [:div.retail.inactive-section {:on-click #(re/dispatch [::events/set-active-section "retail"])}
@@ -71,14 +80,14 @@
   (let [active-section @(re/subscribe [::subs/active-section])]
     (if (= active-section "food")
       [:div.food.active-section
-       [:p.active-section-title "The Food Hall"]
-       [:div.active-section-top-right
+       [top-part
+        "The Food Hall"
+        "餐饮"
         [:div.active-section-opening-hours
          [:p "Food Hall Hours:"]
          [:p "Mon – Sat: 11:00AM - 6:00PM"]
          [:p "Sun: 11:00AM - 6:00PM"]]
-        [:p.active-section-top-right-text "餐饮"]
-        [:img.active-section-img {:src "food-section.jpg"}]]
+        "food-section.jpg"]
        [animated-section "Happy Hour" "Every Weekday, 5 - 7PM $4 Beer & $7 Wine Come Hang With Us! **** Tappy Tuesday Pay with Apple Pay and receive 20% off *Beer and Wine excluded*"]
        [footer]]
       [:div.food.inactive-section {:on-click #(re/dispatch [::events/set-active-section "food"])}
