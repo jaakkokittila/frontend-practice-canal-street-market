@@ -33,11 +33,14 @@
 .inactive-section-text-1 {
     padding-top: 3em;
     text-align: center;
+    font-size: 1.5em;
 }
 .inactive-section-text-2 {
     transform: rotate(90deg);
     font-size: 1.5em;
     font-weight: bold;
+    margin-top: 350px;
+    font-size: 2em;
 }
 .logo-text, .logo-text-active {
     font-size: 1.5em;
@@ -45,7 +48,6 @@
     height: 60px;
     border-radius: 50%;
     line-height: 60px;
-    margin-left: 5px;
     border: 1px solid black;
     transition: 0.5s;
 }
@@ -144,9 +146,9 @@
     font-size: 5em;
     font-weight: 100;
     text-align: left;
+    height: 100vh;
 }
 .home-img {
-    margin-top: 100px;
     width: 100%;
     margin-bottom: 60px;
 }
@@ -159,7 +161,8 @@
     font-size: 1.2em;
 }
 .inactive-section {
-    width: 70px;
+    width: 5%;
+    min-width: 70px;
 }
 .contact-section {
     justify-content: space-evenly;

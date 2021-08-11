@@ -11,7 +11,7 @@
   [binaryage/devtools "1.0.3"]]
 
  :dev-http
- {8280 "resources/public"
+ {8250 "resources/public"
   8290 "target/browser-test"}
 
  :builds

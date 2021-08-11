@@ -8,7 +8,7 @@ Clone the repository and then run
 `npm install`
 `npm run watch`
 
-After that open https://localhost:8280
+After that open http://localhost:8250
 
 # TODO
 Mobile version

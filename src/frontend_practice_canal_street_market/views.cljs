@@ -106,7 +106,7 @@
        [footer]]
       [:div.home.inactive-section.pointer {:on-click #(re/dispatch [::events/set-active-section "home"])}
        [:div.text-center.pointer
-        [:p.logo-text.amatic "CM"]]])))
+        [:p.logo-text.amatic.margin-center "CM"]]])))
 
 (defn main-panel []
   [:div.container.flex-row
